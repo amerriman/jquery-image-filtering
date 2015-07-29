@@ -22,20 +22,41 @@ $(".forest").on("click", function(){
      });
 });
 
-$(".low").on("click", function(event){
-  event.preventDefault();
+// $(".low").on("click", function(event){
+//   event.preventDefault();
+
+
+// });
+
+
+
+var pricesToSort = [];
+var cabinInfo = [];
+var prices = $('.home');
+
+function sortPrices(array){
+  for (var i = 0; i < array.length; i++) {
+    pricesToSort.push(parseInt(array[i].dataset.price));
+    cabinInfo += (prices[i]);
+
+  }
+return pricesToSort;
+
+}
+
+console.log("prices to sort", sortPrices(prices));
+console.log("cabin info", cabinInfo);
+
+console.log("sorted high to low", pricesToSort.sort(function(a, b){return b-a;}));
+
+console.log("sorted low to hight", pricesToSort.sort(function(a, b){return a-b;}));
+
+//can we sort while the target is still in 'home'?  Can we just target that data set and sort it and everything else will stay attached?
+
+
+//$('article')[0].dataset
+
+//prices[0].dataset.price
 
 
 });
-
-});
-
-
- var numbers = [];
-  numbers.sort(function(a, b){
-  return a - b;
-  };
-$('article')[0].dataset
-
-prices[0].dataset.price
-
